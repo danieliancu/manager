@@ -16,15 +16,36 @@ body {
 
 input, button, select {
   padding:10px;
+  border-radius:10px;
+  border:.1px solid lightblue;
+  outline: none;
 }
 
 button {
   cursor: pointer;
 }
 
-.x {
+.x, .v, .u {
   color: red;
-  font-size:24px;
+  font-size:28px;
+  cursor: pointer;
+  margin-left:3px;
+  vertical-align: top;
+  display: inline-block;
+  margin-top:-4px;
+}
+
+.v {
+  color: green;
+  margin-top:-2px;
+}
+
+.u {
+  color:white;
+  font-size:18px;
+  margin-top:5px;
+  margin-left:3px;
+
 }
 
 .container-flex {
@@ -41,10 +62,37 @@ nav .container-flex {
   justify-content: space-between;
 }
 
+.inputs {
+  display: flex;
+}
+
+.inputs select {
+  flex-grow:1;
+}
+
+.inputs input {
+  flex-grow:5;
+}
+
+.inputs button {
+  flex-grow:1;
+  background-color:green;
+  color:white;
+  border:none;
+}
+
 .task {
   display:flex;
   align-items: center;
   justify-content: space-between;
+  padding:5px;
+  border-radius:10px;
+  padding:10px; 
+  box-shadow:0px 0px 5px lightgrey; 
+}
+
+.taskDone {
+  background-color:green;
 }
 
 .Normal {
@@ -57,4 +105,49 @@ nav .container-flex {
 
 .High {
   background-color:yellow;
+}
+
+.details {
+  font-size:12px;
+  background-color:white;
+  padding:5px 10px;
+  border:.1px solid black;
+  border-radius:10px;
+  vertical-align: super;
+  margin-top: 4px;
+  margin-right:10px;
+  display: inline-block;
+}
+
+.details:first-child {
+  margin-right:5px;
+  vertical-align:top;
+}
+
+.card {
+  border:.1px solid lightblue;
+  padding:0px 20px 20px 20px;
+  margin:10px 0px;
+  border-radius:10px;
+}
+
+
+
+h2 {
+  line-height: 10px;
+  font-size:18px;
+  padding:10px 0px;
+}
+
+@media only screen and (max-width: 550px) {
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .task>div {
+    padding:10px;
+  }
+  .details {
+    line-height:16px;
+  }
 }
